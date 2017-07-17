@@ -1,0 +1,14 @@
+mixin _subscriber(subscriber)
+	tr
+		td= subscriber.id
+		td
+			a(href=subscriber.subscriberURL())= subscriber.email
+		td= subscriber.referral_code
+		td= subscriber.ip_address
+		td= subscriber.referrer_id || "-"
+		td= subscriber.number_of_referrals || "-" 
+		td= subscriber.Prize ? subscriber.Prize.name : "-"
+		td
+			.dropdown
+				a.edit-item(href="/subscribers/#{subscriber.id}", "data-method"="delete", "data-confirm"="true")
+					i.fa.fa-close

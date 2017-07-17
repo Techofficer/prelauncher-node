@@ -1,0 +1,17 @@
+include _subscriber
+
+mixin _subscribers(subscribers)
+	table.table.table-responsive
+		thead
+			tr
+				th ID
+				th Email
+				th Code
+				th IP address
+				th Referrer ID
+				th Referred
+				th Prize
+				th
+		tbody
+			each subscriber in subscribers
+				+_subscriber(subscriber)

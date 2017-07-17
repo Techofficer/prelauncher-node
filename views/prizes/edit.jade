@@ -1,0 +1,9 @@
+extends ../layout/dashboard
+
+block vars
+	- var pageTitle = "Edit prize"
+
+
+block content
+	form(method= "POST" action="/prizes/" + prize.id + "?_method=put" enctype="multipart/form-data")
+		include _form

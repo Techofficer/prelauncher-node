@@ -1,0 +1,31 @@
+include _subscribers
+include ../layout/_pagination
+
+extends ../layout/dashboard
+
+block vars
+	- var pageTitle = "Subscribers"
+
+
+block content
+	#control-panel
+		.btn-toolbar(role="toolbar" aria-label="Control panel")
+			.btn-group(role="group" aria-label="First group")
+				a.btn.btn-default(type="button", title="Export", href="/subscribers/export")
+					i.fa.fa-download
+
+			
+			form.email-search(role='search', action="/subscribers")
+				.input-group
+					input#email-search.form-control(type='text', placeholder= "Search by email", name="q", value= query.q || "")
+					.input-group-btn
+						button.btn.btn-default(type='submit')
+							i.glyphicon.glyphicon-search
+
+	if subscribers.length > 0
+		+_subscribers(subscribers)
+		+_pagination(parseInt(query.page), pageNum, "/subscribers")
+	else 
+		p No subscribers have been added yet.
+
+			

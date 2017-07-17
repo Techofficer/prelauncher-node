@@ -1,0 +1,13 @@
+include _prize
+
+mixin _prizes(prizes)
+	table.table.table-responsive
+		thead
+			tr
+				th Name
+				th Required number of referrals
+				th Winners
+				th 
+		tbody
+			each prize in prizes
+				+_prize(prize)

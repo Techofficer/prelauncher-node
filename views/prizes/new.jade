@@ -1,0 +1,9 @@
+extends ../layout/dashboard
+
+block vars
+	- var pageTitle = "New prize"
+
+
+block content
+	form(method= "POST" action="/prizes/?_method=post" enctype="multipart/form-data")
+		include _form

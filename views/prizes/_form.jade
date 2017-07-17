@@ -1,0 +1,29 @@
+.form-group.row
+	.col-md-4
+		label
+			| Name
+			span.required *
+		p.field-description Name of the prize
+	.col-md-4
+		input.form-control(name="prize[name]", placeholder= "Name", maxlength=80, required=true, value=prize.name)
+
+.form-group.row
+	.col-md-4
+		label
+			|  Required number of referrals
+			span.required *
+		p.field-description Number of referrals required to get the prize. 
+	.col-md-4
+		input.form-control(name="prize[number_of_referrals]", placeholder= "Number of referrals", type="number", required=true, step=1, value= prize.number_of_referrals)
+
+.form-group.row
+	.col-md-4
+		label Image
+		p.field-description It will be displayed to users when they hover over the prize's name in progress bar.  
+	.col-md-4
+		input(name="image", type="file")
+
+.form-group.row
+	.col-md-5
+		input.btn.btn-branded(type="submit", value= "Save")
+		a.btn.btn-branded-inversed(href="/prizes") Back

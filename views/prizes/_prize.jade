@@ -1,0 +1,10 @@
+mixin _prize(prize)
+	tr
+		td
+			a(href="/prizes/#{prize.id}/edit")= prize.name
+		td= prize.number_of_referrals
+		td= prize.Subscribers.length
+		td
+			.dropdown
+				a.edit-item(href="/prizes/#{prize.id}", "data-method"="delete", "data-confirm"="true")
+					i.fa.fa-close

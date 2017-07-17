@@ -1,0 +1,20 @@
+{
+  "name": "techmakers",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./app"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "method-override": "~2.3.5",
+    "express": "~4.12.4",
+    "jade": "~1.9.2",
+    "sitemap": "~0.9.0",
+    "sequelize-cli": "~2.7.0",
+    "sqlite3": "~3.1.8",
+    "sequelize": "~4.3.2",
+    "json2csv": "~3.9.1",
+    "multer": "~0.1.8"
+  }
+}

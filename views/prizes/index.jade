@@ -1,0 +1,16 @@
+include _prizes
+
+extends ../layout/dashboard
+
+block vars
+	- var pageTitle = "Prizes"
+
+
+block content
+
+	if prizes.length > 0
+		+_prizes(prizes)
+	else 
+		p No prizes have been added yet.
+	a.btn.btn-branded(href="/prizes/new") New prize
+			

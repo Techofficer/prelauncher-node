@@ -1,0 +1,13 @@
+mixin _pagination(page, pageNum, url, query)
+	if pageNum > 1
+		- var i = Math.max(page - 3, 1)
+		nav
+			ul.pagination.pagination-sm
+				while i <= Math.min(page + 3, pageNum)
+					if i == page
+						li.active
+							a(href="#{url}/?page=#{i}")=i
+					else
+						li
+							a(href="#{url}/?page=#{i}")=i							
+					- i++

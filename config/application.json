@@ -1,0 +1,8 @@
+{
+  "express": {
+    "port": 3000
+  },
+  "mongoose": {
+    "db": "mongodb://efremov:mEsqueunclubf00@ds139869.mlab.com:39869/smart_lock"
+  }
+}

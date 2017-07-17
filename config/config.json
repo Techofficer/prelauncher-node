@@ -1,0 +1,22 @@
+{
+  "server": {
+    "port": 3000,
+    "root_url": "http://localhost:3000"
+  },
+  "database": {
+    "development": {
+      "username": "root",
+      "password": null,
+      "database": "database_development",
+      "host": "127.0.0.1",
+      "dialect": "sqlite"
+    },
+    "production": {
+      "username": "root",
+      "password": null,
+      "database": "database_production",
+      "host": "127.0.0.1",
+      "dialect": "sqlite"
+    }
+  }
+}

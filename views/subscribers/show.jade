@@ -1,0 +1,55 @@
+extends ../layout/application
+
+block meta
+	title Prelauncher node js
+	meta(content="Prelauncher node js", property="description")
+
+block content
+	section#refer
+		.cover-bg
+
+		.col-md-5.col-md-offset-1.col-sm-6.hidden-xs.refer-left
+		.col-md-5.col-sm-6.col-xs-12
+			article
+				h1 Invite friends & Earn product
+				h2 Share your unique link via email or social networks and earn prizes for each friend who signs up.
+			input.form-control(value= subscriber.referralURL())
+
+			#social-sharing
+				ul
+					li
+						a.ico-facebook(href="https://www.facebook.com/sharer/sharer.php?u=" + querystring.escape(root_url) + "&title=" + querystring.escape("Умный домофон"))
+							i.fa.fa-facebook-official
+					li
+						a.ico-twitter(href="https://twitter.com/intent/tweet?text=" + querystring.escape("Было бы круто, если бы дверь вашего подъезда открывалась автоматически при вашем приближении? Узнайте первыми!") + "&url=" + querystring.escape(root_url))
+							i.fa.fa-twitter
+							
+	aside.text-center#instructions
+		h4 Here's how it works
+
+
+	#prizes
+		.prize_name Friends joined
+		.prize_number Your prize
+
+
+		.fakeprogressbar
+		.prizes
+			.progressbar(style= ("width: " + subscriber.calculateProgress(prizes) + "%"))
+			if prizes.length > 0
+				each prize in prizes
+					.prize(style= "width: #{100/prizes.length}%")
+						span.prize-number= prize.number_of_referrals
+						p.prize-name= prize.name
+
+						if prize.image
+							img(src=prize.image)
+
+	#friends_joined.text-center
+		p 
+			span
+				= subscriber.number_of_referrals 
+				= subscriber.number_of_referrals == 1 ? " friend " : " friends " 
+			= subscriber.number_of_referrals == 1 ? " has " : " have " 
+			| joined so far.
+		small Keep checking..

@@ -1,0 +1,45 @@
+extends ../layout/application
+
+block meta
+	title Prelauncher
+	meta(content="Подпишись на обновления и получи ранний доступ к прими участие в закрытом бета-тестировании умного устройства Луоки для домофонных систем", property="description")
+	
+block content
+	section#main.text-center
+		.cover
+			h1.cover-title. 
+				Referral
+				<span> Prelauch </span>
+				Campaign
+			h2.cover-subtitle Start your prelaunch referral campaign to gather thousands of emails before you even launch your e-commerce website.
+
+			#form-wrapper
+				form#new_user.form-horizontal(method="post", action="/subscribers")
+
+					if referrer_id
+						input(name="subscriber[referrer_id]", type="hidden", value= referrer_id)
+
+					.form-group
+						input.form-control(name="subscriber[email]", type="email", placeholder="Enter email address", required=true, autofocus=true)
+					.form-group
+						input.btn.btn-branded(type="submit", value="Step inside")
+
+			#contact_icons
+				ul.contact-socials
+					li
+						a.foo_social.ico-facebook(href="#", title="Prelauncher in Facebook")
+							i.fa.fa-facebook
+					li
+						a.foo_social.ico-twitter(href="#" title="Prelauncher in Twitter")
+							i.fa.fa-twitter
+					li
+						a.foo_social.ico-google-plus(href="#", title="Prelauncher Google+")
+							i.fa.fa-google-plus
+
+			footer
+				p.
+					Copyright © 2017
+
+				a(href="https://prelauncher.info", title="Prelaunch campaign") www.prelauncher.info
+
+		
